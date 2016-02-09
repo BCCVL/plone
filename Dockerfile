@@ -13,12 +13,12 @@ RUN yum install -y libxml2-devel \
                    && \
     yum clean all
 
-COPY files/versions.cfg $ZOPE_HOME/
-COPY files/base.cfg $ZOPE_HOME/
+COPY files/versions.cfg $Z_HOME/
+COPY files/base.cfg $Z_HOME/
 
-WORKDIR $ZOPE_HOME
+WORKDIR $Z_HOME
 
-RUN $ZOPE_HOME/build.sh
+RUN $Z_HOME/build.sh
 
 EXPOSE 8080
 
